@@ -17,22 +17,22 @@ public class GameManager {
 		if (dir.toLowerCase().equals("north") || dir.toLowerCase().equals("n")) {
 			player.setObjPosY(player.getObjPosY() + 1);
 			toReturn = "Moved North";
-			//player.setScore(player.getScore() - 1);
+			// player.setScore(player.getScore() - 1);
 		}
 		if (dir.toLowerCase().equals("south") || dir.toLowerCase().equals("s")) {
 			player.setObjPosY(player.getObjPosY() - 1);
 			toReturn = "Moved South";
-			//((Player) player).setScore(((Player) player).getScore() - 1);
+			// ((Player) player).setScore(((Player) player).getScore() - 1);
 		}
 		if (dir.toLowerCase().equals("east") || dir.toLowerCase().equals("e")) {
 			player.setObjPosX(player.getObjPosX() + 1);
 			toReturn = "Moved East";
-			//player.setScore(player.getScore() - 1);
+			// player.setScore(player.getScore() - 1);
 		}
 		if (dir.toLowerCase().equals("west") || dir.toLowerCase().equals("w")) {
 			player.setObjPosX(player.getObjPosX() - 1);
 			toReturn = "Moved West";
-			//player.setScore(player.getScore() - 1);
+			// player.setScore(player.getScore() - 1);
 		}
 
 		return toReturn;
@@ -60,7 +60,8 @@ public class GameManager {
 
 		if (isValid) {
 			if (input.toLowerCase().equals("look")) {
-				toReturn = "The treasure is : " + Math.round((distanceToTreasure(player, b)* 100.0) / 100.0) + "m away!";
+				toReturn = "The treasure is : " + Math.round((distanceToTreasure(player, b) * 100.0) / 100.0)
+						+ "m away!";
 
 			} else {
 				toReturn = playerMove((Player) player, input);

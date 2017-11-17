@@ -6,7 +6,6 @@ public class Player extends Object {
 
 	private int score = 100;
 	private ArrayList<Item> playerItems = new ArrayList<Item>();
-	private ItemManager im = new ItemManager();
 	private boolean isOnTopOfItem = false;
 
 	public boolean isOnTopOfItem() {
