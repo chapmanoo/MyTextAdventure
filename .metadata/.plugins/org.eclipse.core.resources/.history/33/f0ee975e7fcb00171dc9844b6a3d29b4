@@ -1,0 +1,13 @@
+package main;
+import java.util.Vector;
+
+public class GameManager {
+	
+	public double distanceToTreasure(Object a, Object b)
+	{
+		double toReturn =  Math.hypot(a.getObjPosX() - b.getObjPosX(), a.getObjPosY() - b.getObjPosY());
+		
+		return toReturn;
+	}
+
+}

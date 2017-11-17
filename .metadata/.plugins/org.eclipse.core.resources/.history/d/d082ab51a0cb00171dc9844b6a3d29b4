@@ -1,0 +1,68 @@
+package main;
+
+import java.util.LinkedList;
+import java.util.Random;
+
+public class ItemManager {
+
+	private boolean isListGenerated = false;
+	private LinkedList<Item> itemList = new LinkedList<Item>();
+
+	// private ArrayList<String> prefix = new ArrayList<String>();
+	// private ArrayList<String> describe = new ArrayList<String>();
+	//
+	private String[] describer = { "a big", "a small", "a wet", "a bloody", "an old", "a beaten" };
+	private String[] object = { "jug", "sword", "goblet", "stick", "book", "cauldron" };
+
+	public boolean addItem(Item i) {
+		try {
+			itemList.add(i);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public boolean removeItem(Item i) {
+		try {
+			itemList.remove(i);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public LinkedList<Item> getItemList() {
+		return itemList;
+	}
+
+	public void listGeneration(int mapSize, int itemsToMake) {
+		if (!isListGenerated) {
+			for (int i = 0; i < itemsToMake; i++) {
+				addItem(generateItem(mapSize));
+			}
+		}
+	}
+
+	private Item generateItem(int mapSize) {
+
+		String itemName = itemNameCreator();
+
+		Item toReturn = new Item(mapSize, itemName, 0);
+
+		return toReturn;
+	}
+
+	private String itemNameCreator() {
+		String toReturn = "";
+		int indexA = new Random().nextInt(describer.length);
+		toReturn += describer[indexA] + " ";
+
+		indexA = new Random().nextInt(object.length);
+		toReturn += object[indexA] + " ";
+
+		System.out.println(toReturn);
+		return toReturn;
+	}
+
+}

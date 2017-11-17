@@ -1,0 +1,63 @@
+package main;
+import java.util.Vector;
+
+public class GameManager {
+	
+	private String[] validCommands = {"look", "n", "north", "e", "east", "s", "south", "w", "west"};
+	
+	public double distanceToTreasure(Object a, Object b)
+	{
+		double toReturn =  Math.hypot(a.getObjPosX() - b.getObjPosX(), a.getObjPosY() - b.getObjPosY());
+		
+		return toReturn;
+	}
+	
+	public String playerMove (Object player, String dir) {
+		String toReturn = "";
+		if (dir.toLowerCase().equals("north")) {
+			player.setObjPosY(player.getObjPosY()+1);
+			toReturn = "Moved North";
+			}
+		if (dir.toLowerCase().equals("south")) {
+			player.setObjPosY(player.getObjPosY()-1);
+			toReturn = "Moved South";
+		}
+		if (dir.toLowerCase().equals("east")) {
+			player.setObjPosX(player.getObjPosX()+1);
+			toReturn = "Moved East";
+		}
+		if (dir.toLowerCase().equals("west")) {
+			player.setObjPosX(player.getObjPosX()-1);
+			toReturn = "Moved West";
+		}
+		
+		return toReturn;
+	}
+	
+	public String manageInput(Object a, Object b, String input)
+	{
+		String toReturn = "";
+		boolean isValid = false;
+		for(String i : validCommands)
+		{
+			if(input.toLowerCase().equals(i.toLowerCase()))
+			{
+				isValid = true;
+			} 
+		}
+		
+		if (isValid)
+		{
+			if (input.toLowerCase().equals("look"))
+			{
+				toReturn = "The treasure is :" + distanceToTreasure(a, b) + "m away!";
+			} else 
+			{
+				toReturn = playerMove(a, input);
+			}
+		}
+		
+		return toReturn;
+	}
+
+}

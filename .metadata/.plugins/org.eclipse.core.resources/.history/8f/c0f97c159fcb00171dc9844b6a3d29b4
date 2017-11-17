@@ -1,0 +1,37 @@
+package main;
+
+import java.util.ArrayList;
+
+public class Player extends Object {
+
+	private int score = 100;
+	private ArrayList<Item> playerItems = new ArrayList<Item>();
+	private ItemManager im = new ItemManager();
+
+	public Player(int mapSize) {
+		super(mapSize);
+
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+	
+	public boolean addItem(Item i)
+	{
+		try {
+			playerItems.add(i);
+			score += i.getScoreValue();
+			return true;
+		} catch (Exception e)
+		{
+			return false;
+		}
+	}
+	
+
+}

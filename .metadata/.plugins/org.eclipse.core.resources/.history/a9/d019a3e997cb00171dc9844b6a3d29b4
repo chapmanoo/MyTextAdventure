@@ -1,0 +1,8 @@
+package main;
+
+public class ItemManager {
+	LinkedList<Object> = new 
+			
+			(item)this.getName();
+
+}

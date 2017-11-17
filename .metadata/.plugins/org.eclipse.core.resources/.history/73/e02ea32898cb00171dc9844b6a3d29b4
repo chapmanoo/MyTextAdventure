@@ -1,0 +1,10 @@
+package main;
+
+public class Item extends Object{
+
+	public Item(int mapSize) {
+		super(mapSize);
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,13 @@
+package main;
+import java.util.Vector;
+
+public class GameManager {
+	
+	public double distanceToTreasure(Vector<Integer> playerPos, Vector<Integer> treasurePos)
+	{
+		double toReturn =  Math.hypot(playerPos.get(0) - treasurePos.get(0), playerPos.get(1) - treasurePos.get(1));
+		
+		return toReturn;
+	}
+
+}

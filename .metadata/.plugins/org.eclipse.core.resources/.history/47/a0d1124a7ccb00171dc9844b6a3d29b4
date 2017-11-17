@@ -1,0 +1,14 @@
+package main;
+
+public class Player extends Object{
+	
+	private int score;
+
+	public Player(int mapSize) {
+		super(mapSize);
+		
+	}
+	
+	
+
+}

@@ -1,0 +1,49 @@
+package main;
+import java.util.Scanner;
+
+public class GameRunner {
+	public static void main(String[] args)
+	{
+		Scanner sc =  new Scanner(System.in);
+		GameManager gm = new GameManager();
+		boolean finishedSetup = false;
+		int mapSize = 0;
+		Object player = null;
+		Object goal = null;
+		
+		//game setup
+		while (!finishedSetup) {
+		System.out.println("Input size of map");
+		try {
+			mapSize = Integer.parseInt(sc.nextLine());
+			player = new Player(mapSize);
+			goal = new Treasure(mapSize, true);
+			
+			while (player.getObjPosX() == goal.getObjPosX() || player.getObjPosY() == goal.getObjPosY())
+			{
+				goal = new Treasure(mapSize, true);
+				
+			}
+			finishedSetup = true;
+			System.out.println("GAME START");
+		} catch (NumberFormatException nfe) {
+			System.out.println("Input was not an integer. " + nfe);
+			}
+		}//game setup
+		
+		System.out.println();
+		System.out.println("You awaken to find yourself in a barren moor.  Try \"look\".");
+		
+		//main play loop
+		System.out.println(gm.distanceToTreasure(player, goal) + "##############");
+		while (gm.distanceToTreasure(player, goal) != 0)
+		{
+			
+			String input = sc.nextLine();
+			System.out.println(gm.manageInput(player, goal, input));
+		}//main play loop
+		
+		System.out.println("You see a box sitting on the plain.\nIts filled with treasure!\nYou win!\nThe end.\n\nYou have a score of : " + ((Player)player).getScore());
+	}
+
+}

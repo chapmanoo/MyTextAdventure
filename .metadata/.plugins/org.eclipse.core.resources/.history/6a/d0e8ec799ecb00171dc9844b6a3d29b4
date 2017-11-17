@@ -1,0 +1,20 @@
+package main;
+
+public class Player extends Object {
+
+	private int score = 100;
+
+	public Player(int mapSize) {
+		super(mapSize);
+
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+}

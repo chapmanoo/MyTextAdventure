@@ -1,0 +1,14 @@
+package main;
+
+public class Item extends Object{
+	
+	private String itemName;
+	private int scoreValue;
+	
+
+	public Item(int mapSize) {
+		super(mapSize);
+		// TODO Auto-generated constructor stub
+	}
+
+}

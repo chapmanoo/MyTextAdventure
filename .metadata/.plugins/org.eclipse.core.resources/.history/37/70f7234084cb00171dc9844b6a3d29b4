@@ -1,0 +1,35 @@
+package main;
+import java.util.Scanner;
+
+public class GameRunner {
+	public static void main(String[] args)
+	{
+		Scanner sc =  new Scanner(System.in);
+		GameManager gm = new GameManager();
+		boolean finishedSetup = false;
+		int tolerance = 1;
+		int mapSize = 0;
+		Object player = null;
+		Object goal = null;
+		
+		if (!finishedSetup)
+		{
+			//game setup
+			System.out.println("Input size of map");
+			mapSize = Integer.parseInt(sc.nextLine());
+			player = new Player(mapSize);
+			goal = new Treasure(mapSize, true);
+			finishedSetup = true;
+		}
+		
+		sc = new Scanner(System.in);
+				
+		while (gm.distanceToTreasure(player, goal) <= tolerance)
+		{
+			
+			String input = sc.nextLine();
+			System.out.println(gm.manageInput(player, goal, input));
+		}
+	}
+
+}

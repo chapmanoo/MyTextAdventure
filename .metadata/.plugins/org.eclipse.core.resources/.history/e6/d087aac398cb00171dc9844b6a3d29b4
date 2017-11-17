@@ -1,0 +1,13 @@
+package main;
+import java.util.LinkedList;
+
+public class ItemManager {
+	
+	private LinkedList<Item> itemList = new LinkedList<Item>();
+	
+	public void addItem(Item i) {
+		itemList.add(i);
+	}
+			
+
+}

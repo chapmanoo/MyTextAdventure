@@ -1,0 +1,14 @@
+package main;
+
+public class Treasure extends Object{
+	
+	private boolean isGoal = false;
+
+	public Treasure(int _mapSize, boolean _isGoal) {
+		super(_mapSize);
+		this.isGoal = _isGoal;
+
+	}
+	
+	
+}
