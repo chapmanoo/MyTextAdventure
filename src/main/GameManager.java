@@ -2,7 +2,7 @@ package main;
 
 public class GameManager {
 
-	boolean isTutorial = true;
+	private boolean isTutorial = true;
 
 	private String[] validCommands = { "look", "n", "north", "e", "east", "s", "south", "w", "west" };
 
@@ -14,22 +14,22 @@ public class GameManager {
 
 	public String playerMove(Player player, String dir) {
 		String toReturn = "";
-		if (dir.toLowerCase().equals("north") || dir.toLowerCase().equals("n")) {
+		if (dir.equalsIgnoreCase("north") || dir.equalsIgnoreCase("n")) {
 			player.setObjPosY(player.getObjPosY() + 1);
 			toReturn = "Moved North";
 			// player.setScore(player.getScore() - 1);
 		}
-		if (dir.toLowerCase().equals("south") || dir.toLowerCase().equals("s")) {
+		if (dir.equalsIgnoreCase("south") || dir.equalsIgnoreCase("s")) {
 			player.setObjPosY(player.getObjPosY() - 1);
 			toReturn = "Moved South";
 			// ((Player) player).setScore(((Player) player).getScore() - 1);
 		}
-		if (dir.toLowerCase().equals("east") || dir.toLowerCase().equals("e")) {
+		if (dir.equalsIgnoreCase("east") || dir.equalsIgnoreCase("e")) {
 			player.setObjPosX(player.getObjPosX() + 1);
 			toReturn = "Moved East";
 			// player.setScore(player.getScore() - 1);
 		}
-		if (dir.toLowerCase().equals("west") || dir.toLowerCase().equals("w")) {
+		if (dir.equalsIgnoreCase("west") || dir.equalsIgnoreCase("w")) {
 			player.setObjPosX(player.getObjPosX() - 1);
 			toReturn = "Moved West";
 			// player.setScore(player.getScore() - 1);
